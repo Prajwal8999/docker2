@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-u9hjo62g3&=+nxl0)1j&4p@9zo6ucniyo^%4^mb7!cb+dz+cuo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = "localhost 127.0.0.1 [::1]".split(" ")
+ALLOWED_HOSTS = "localhost 127.0.0.1 [::1] 0.0.0.0".split(" ")
 
 AUTHENTICATION_BACKENDS = ('blog.auth_backend.EmailAuthBackend',)
 
@@ -80,12 +80,8 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "arjun_test_db",
-        "USER": "root",
-        "PASSWORD": "newpassword",
-        "HOST": "localhost",
-        "PORT": 5432,
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",  # Path to your SQLite database file
     }
 }
 
